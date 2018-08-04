@@ -1,0 +1,2 @@
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc libGeo.a  CMakeFiles/Geo.dir/UnionFind.o CMakeFiles/Geo.dir/contour.o CMakeFiles/Geo.dir/contour_fcm.o CMakeFiles/Geo.dir/contour_geo.o CMakeFiles/Geo.dir/geo_curv.o CMakeFiles/Geo.dir/my_mesh.o CMakeFiles/Geo.dir/readers.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib libGeo.a

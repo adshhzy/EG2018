@@ -1,0 +1,2 @@
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc libOpt.a  CMakeFiles/Opt.dir/DynamicMesh.o CMakeFiles/Opt.dir/a_aclass_contour.o CMakeFiles/Opt.dir/a_aclass_crosssection.o CMakeFiles/Opt.dir/a_class_iteropt.o CMakeFiles/Opt.dir/transformer.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib libOpt.a
