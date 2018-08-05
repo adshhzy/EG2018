@@ -136,14 +136,15 @@ void CrossSections::writeSegs2(string filename, vector<seg>&segs,vector<double>&
 
 
 
-void CrossSections::FCMGeometryProcessPipeline(string infilename, string outpath, double iline_step, double portion, string triangle_cmd){
+void CrossSections::FCMGeometryProcessPipeline(string infilename, string outpath, double iline_step, double portion, string triangle_cmd, bool iswrite_intermedium_result){
 
 
+    iswritemediaresult = iswrite_intermedium_result;
     ReadCrossSections(infilename);
 
     CalSelfProperty();
 
-    //WriteCrossSectionsObjFormat(outpath + ("mediumresult_c"));
+    if(iswritemediaresult)WriteCrossSectionsObjFormat(outpath + ("mediumresult_input"));
 
     vector<planeinfo>boundingbox;
     FindBoundingBox(boundingbox,8);
@@ -162,10 +163,10 @@ void CrossSections::FCMGeometryProcessPipeline(string infilename, string outpath
     findPlaneGraphMM(segs,planelines,bsegs,iline_step, 4);
 
     //cout<<"Ads"<<endl;
-    CallTriangle(triangle_cmd, outpath + ("mediumresult_t"));
+    CallTriangle(triangle_cmd, outpath + ("mediumresult_tri"));
     //cout<<"Ads"<<endl;
 
-    findImplicitValue(outpath + ("mediumresult_v"));
+    findImplicitValue(outpath + ("mediumresult_value"));
 
     LineSafeVertices(portion);
 
@@ -717,7 +718,7 @@ void CrossSections::CallTriangle(string &cmline, string outprefix){
 
 
     //writeSegs2(outprefix,p2psegs,V);
-    //writeObjFile(outprefix,V,AllT);
+    if(iswritemediaresult)writeObjFile(outprefix,V,AllT);
 
 }
 
@@ -772,7 +773,7 @@ void CrossSections::findImplicitValue(string outprefix){
 
             double maxvalue = *max_element(mindist.begin(),mindist.end());
 
-            for(int j=0;j<n_materials;++j)if(mindist[j]==-INFTY_DOUBLE)mindist[j] = 0 - THRES * 1000;
+            for(int j=0;j<n_materials;++j)if(mindist[j]==-INFTY_DOUBLE)mindist[j] = 0 - THRES * 1e10;
 
             auto p_vval = val[globalv].data();
             for(int j=0;j<n_materials;++j)p_vval[iplane*n_materials+j] = mindist[j];
@@ -785,7 +786,7 @@ void CrossSections::findImplicitValue(string outprefix){
 
 
 
-    //writePlanesVal(filename_test);
+    //if(iswritemediaresult)writePlanesVal(filename_test);
 
 
 

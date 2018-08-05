@@ -4,17 +4,7 @@
 #include"constrainOpt/aclass.h"
 #include"mymesh/contour.h"
 #include<unistd.h>
-#include<cstdlib>
 using namespace std;
-void SpecialRouteforFCM();
-void SpecialRouteforFCM_old();
-void SpecialRouteforFCM_mix();
-void SpecialRouteforFCM_old2();
-void TransformCtrIntoMathematica();
-void TransformMingToSuf();
-void TransformCslIntoMathematica();
-void TransformerSelectivePlanes();
-
 
 int main(int argc,char** argv)
 {
@@ -25,13 +15,14 @@ int main(int argc,char** argv)
     string outpath("data/mousebrain/");
     string cmline("pzQYYa0.001");
     double iline_step = 0.02;
-    double portion = 0.05;
-    double lambda = 1e-8;
-    int maxiter = 20;
+    double portion = 0.1;
+    double lambda = 1e-3;
+    int maxiter = 30;
+    bool iswrite_intermedium_result = false;
 
-    char c;
+    int c;
     optind=1;
-	while ((c = getopt(argc, argv, "i:o:l:s:p:m:t:")) != -1) {
+    while ((c = getopt(argc, argv, "i:o:l:s:p:m:t:w")) != -1) {
         switch (c) {
         case 'i':
             infilename = optarg;
@@ -39,9 +30,6 @@ int main(int argc,char** argv)
         case 'o':
             outpath = string(optarg);
             break;
-		case 'l':
-			lambda = atof(optarg);
-			break;		
         case 's':
             iline_step = atof(optarg);
             break;
@@ -53,6 +41,12 @@ int main(int argc,char** argv)
             break;
         case 't':
             cmline = string(optarg);
+            break;
+        case 'l':
+            lambda = atof(optarg);
+            break;
+        case 'w':
+            iswrite_intermedium_result = true;
             break;
         case '?':
             cout << "Bad argument setting!" << endl;
@@ -67,13 +61,13 @@ int main(int argc,char** argv)
     cout<<"line sample step: "<<iline_step<<endl;
     cout<<"active portion: "<<portion<<endl;
     cout<<"lambda: "<<lambda<<endl;
-	cout<<"maxiter: "<<maxiter<<endl;
+    cout<<"iswrite intermedium result"<<iswrite_intermedium_result<<endl;
 
 
     Graphs a;
 
     CrossSections css;
-    css.FCMGeometryProcessPipeline(infilename, outpath, iline_step, portion, cmline);
+    css.FCMGeometryProcessPipeline(infilename, outpath, iline_step, portion, cmline, iswrite_intermedium_result);
     a.CrossectionsPipeline(css, outpath, lambda, maxiter);
 
 

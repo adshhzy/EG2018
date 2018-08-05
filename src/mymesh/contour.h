@@ -196,6 +196,8 @@ public:
 
     vector<int>nodeMarkers;
 
+    bool iswritemediaresult;
+
 
 public:
 
@@ -205,7 +207,7 @@ public:
     void writeSegs2(string filename, vector<seg>&segs,vector<double>&newv);
 
     //main pipeline interface
-    void FCMGeometryProcessPipeline(string infilename, string outpath, double iline_step, double portion, string triangle_cmd);
+    void FCMGeometryProcessPipeline(string infilename, string outpath, double iline_step, double portion, string triangle_cmd, bool iswrite_intermedium_result);
 
 public:
 

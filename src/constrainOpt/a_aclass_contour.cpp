@@ -192,9 +192,9 @@ void Graphs::GetContour2(vector<vector<double> > &val, string fpath){
     //CrossSs.WriteCrossSectionsToFCMtCtr(fpath+string("tctr.txt"));
 
 
-    CrossSs.WriteCrossSections(fpath+string("tctrContour"));
+    CrossSs.WriteCrossSections(fpath+string("outputContour"));
 
-    CrossSs.WriteCrossSectionsCtrFormat(fpath+string("outctr"));
+    //CrossSs.WriteCrossSectionsCtrFormat(fpath+string("outctr"));
 
 
 
