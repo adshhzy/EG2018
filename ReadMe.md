@@ -4,7 +4,7 @@ fcm - Zhiyang Huang (2018)
 
 This code implements the algorithm described in
 
-Huang, Zhi Yang, et al. "Repairing Inconsistent Curve Networks on Non©\parallel Cross©\sections." Computer Graphics Forum. Vol. 37. No. 2. 2018.
+Huang, Zhi Yang, et al. "Repairing Inconsistent Curve Networks on Non-parallel Cross-sections." Computer Graphics Forum. Vol. 37. No. 2. 2018.
 
 The primary function of this program is to restore the inconsistent cross-sections. Giving input of a set of inconsistent contours, the program builds up the implicit domain (triangulated planes sharing intersection lines) and modifies the implicit representation (sign distance function) for repairing the inconsistency.
 
@@ -37,7 +37,7 @@ Then go to the folder EG2018, build the Cmake file and make:
 $cmake .
 $make
 
-In the root directory, there should be an executable called "fcm" (or "fcm.exe" on Windows if it is successfully built).
+In the EG2018 directory, there should be an executable called "fcm" (or "fcm.exe" on Windows if it is successfully built).
 
 
 RUNNING
@@ -65,7 +65,7 @@ where:
 8. -t: optional argument. Followed by a string for calling the Triangle library, which is used for triangulating planes. Default "pzQYYa0.001". See  https://www.cs.cmu.edu/~quake/triangle.html for details.
 
 An example is placed at data folder:
-$./fcm -i data/mousebrain/mousebrain.contour -o data/mousebrain/ -m 100 -l 1e-3 -w -p 0.1
+$./fcm -i data/mousebrain/mousebrain.contour -o data/mousebrain/ -m 100 -l 1e-2 -w -p 0.1
 
 
 The code is still being optimized and reconstructed. A more compact and friendly version with visualization code and more examples will be updated soon.
