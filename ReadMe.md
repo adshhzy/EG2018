@@ -68,7 +68,7 @@ An example is placed at data folder:
 $./fcm -i data/mousebrain/mousebrain.contour -o data/mousebrain/ -m 100 -l 1e-3 -w -p 0.1
 
 
-The code is still being optimized and reconstructed, and a more compact and friendly version will be updated soon.
+The code is still being optimized and reconstructed. A more compact and friendly version with visualization code and more examples will be updated soon.
 
 
 
