@@ -62,13 +62,13 @@ where:
 
 7. -m: optional argument. Followed by an integer number indicating the maximum number of update in the optimization step. Default 30.
 
-8. -t: optional argument. Followed by a string for calling the Triangle library, which is used for triangulating planes. Default "pzQYYa0.001". See  https://www.cs.cmu.edu/~quake/triangle.html for details.
+8. -t: optional argument. Followed by a string for calling the Triangle library, which is used for triangulating planes. Default "pzQYYa0.001". See  https://www.cs.cmu.edu/~quake/triangle.html for details. You should modify it according to your input. Please carefully set up the constraints othervise it will fail.
 
-An example is placed at data folder:
-$./fcm -i data/mousebrain/mousebrain.contour -o data/mousebrain/ -m 100 -l 1e-2 -w -p 0.1
+An example is placed at data folder for testing:
+1. $./fcm -i data/Bermano/Bermano.contour -o data/Bermano/ -m 30 -w -p 0.1 -s 0.5 -t pzQYYa1 -l 1e-9
 
 
-The code is still being optimized and reconstructed. A more compact and friendly version with visualization code and more examples will be updated soon.
+We are still reconstructing and optimizing the code from the original research code, thus some details in the paper has not been fully reproduced. A more compact and friendly version with visualization code and more examples will be updated soon.
 
 
 
