@@ -3,14 +3,14 @@ project(fcm)
 
 SET(EIGEN_INCLUDE_DIRS "/opt/local/include/")
 
-SET(GUROBI_INCLUDE_DIRS "/Library/gurobi702/mac64/include/")
-SET(GUROBI_LIB_DIRS "/Library/gurobi702/mac64/lib/")
+SET(GUROBI_INCLUDE_DIRS "/Library/gurobi811/mac64/include/")
+SET(GUROBI_LIB_DIRS "/Library/gurobi811/mac64/lib/")
 
 
 SET(SUITESPARSE_LIB_DIR "/usr/local/Cellar/suite-sparse/5.2.0/lib/")
 
 
-SET(GUROBI_LIB gurobi_c++ gurobi70)
+SET(GUROBI_LIB gurobi_c++ gurobi81)
 SET(SUITESPARSE_LIB cholmod colamd)
 SET(SRC_DIR "src")
 
