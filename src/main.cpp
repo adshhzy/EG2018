@@ -16,7 +16,7 @@ int main(int argc,char** argv)
     string cmline("pzQYYa0.001");
     double iline_step = 0.02;
     double portion = 0.1;
-    double lambda = 1e-3;
+    double lambda = 0.05;
     int maxiter = 30;
     bool iswrite_intermedium_result = false;
 

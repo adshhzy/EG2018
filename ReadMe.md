@@ -64,11 +64,13 @@ where:
 
 8. -t: optional argument. Followed by a string for calling the Triangle library, which is used for triangulating planes. Default "pzQYYa0.001". See  https://www.cs.cmu.edu/~quake/triangle.html for details. You should modify it according to your input. Please carefully set up the constraints othervise it will fail.
 
-An example is placed at data folder for testing:
-1. $./fcm -i data/Bermano/Bermano.contour -o data/Bermano/ -m 30 -w -p 0.1 -s 0.5 -t pzQYYa1 -l 1e-9
+Few examples is placed at data folder for testing:
+1. $./fcm -i data/Bermano/Bermano.contour -o data/Bermano/                 -m 30 -w -p 0.1 -s 0.5      -t pzQYYa1         -l 0.005
+2. $./fcm -i data/mousebrain/mousebrain.contour -o data/mousebrain/    -m 30 -w -p 0.1 -s 0.02    -t pzQYYa0.001  -l 0.05
+3. $./fcm -i data/ferretbrain/ferretbrain.contour -o data/ferretbrain/            -m 30 -w -p 0.1 -s 1        -t pq28zYYa0.8   -l 0.001
+4. $./fcm -i data/newliver/newliver.contour -o data/newliver/ 			   -m 30 -w -p 0.1 -s 0.03   -t pqzYYa0.001   -l 0.005
 
 
-We are still reconstructing and optimizing the code from the original research code, thus some details in the paper has not been fully reproduced. A more compact and friendly version with visualization code and more examples will be updated soon.
 
 
 

@@ -454,6 +454,7 @@ void Graphs::buildMatrixandSolveLine(vector<nodeinfo>&nodes, vector<triple> &gra
 
         SpMat L(n_node,n_node);
         L.setFromTriplets(Ts.begin(),Ts.end());
+		L = L*L;
 
         SpMat M(n_var,n_var);
         M.setZero();
@@ -695,6 +696,7 @@ void Graphs::BuildMatrixPlane(vector<nodeinfo>&nodes, vector< triple >&graphconn
 
     SpMat L(n_node,n_node);
     L.setFromTriplets(Ts.begin(),Ts.end());
+	L =L*L;
     cout<<"L: "<<L.nonZeros()<<endl;
 
     SpMat M(n_var,n_var);
