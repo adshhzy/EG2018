@@ -71,6 +71,7 @@ Few examples is placed at data folder for testing:
 4. $./fcm -i data/newliver/newliver.contour -o data/newliver/ 			   -m 30 -w -p 0.1 -s 0.03   -t pqzYYa0.001   -l 0.005
 
 
+The program will output the fixed/consistent contour as outputContourmapping.contour,  and  outputView.obj for visualization using standard obj viewers.
+If -w is included in the command line, the program will also output the intermedium results, including the input (mediumresult_input.obj) and the triangulated planes (mediumresult_tri.obj) for visualization of the input contour and the triangulation using standard obj viewers.
 
-
-
+For further questions about the code and the paper, please contact Zhiyang Huang at adshhzy@gmail.com or zhiyang.huang@wustl.edu (might be invalid after he graduated). You can also contact Prof. Tao Ju at taoju@wustl.edu.
